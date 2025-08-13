@@ -34,8 +34,9 @@ const registerUser = async (req, res) => {
             res.status(500).json({ message: 'Server Error', error: error.message });
         }
     } catch(error) {
-
+        console.error(error); // Log the error to the console
+        res.status(500).json({ message: 'Server Error' });
     }
 };
 
-export default { registerUser };
+export { registerUser };
